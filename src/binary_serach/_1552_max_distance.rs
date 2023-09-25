@@ -38,7 +38,7 @@ fn max_distance(position: Vec<i32>, m: i32) -> i32 {
 }
 
 fn distribute_balls(position: &[i32], force: i32) -> i32 {
-    let mut countBalls = 1;
+    let mut count_balls = 1;
     let mut sum = 0;
     let mut last = position[0];
 
@@ -46,11 +46,11 @@ fn distribute_balls(position: &[i32], force: i32) -> i32 {
         let i = *i;
         if i - last >= force {
             last = i;
-            countBalls += 1;
+            count_balls += 1;
         }
     }
 
-    countBalls
+    count_balls
 }
 
 #[test]
