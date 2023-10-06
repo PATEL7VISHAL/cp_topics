@@ -9,5 +9,7 @@ mod _5_longest_palindrome;
 mod _724_pivot_index;
 mod array;
 mod binary_serach;
+mod other;
+mod string;
 
 fn main() {}

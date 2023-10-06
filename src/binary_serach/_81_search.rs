@@ -14,27 +14,32 @@
 /// Output: true
 fn search(nums: Vec<i32>, target: i32) -> bool {
     let mut start = 0;
-    let mut end = nums.len() as i32;
+    let mut end = nums.len() as i32 - 1;
     let mut mid = 0;
-    let is_in_left = target > nums[0];
     let mut element = 0;
 
     while start <= end {
         mid = start + (end - start) / 2;
         element = nums[mid as usize];
 
-        println!("mid: {mid} | mid_value: {}", element);
-
         if element == target {
             return true;
-        } else if element < target {
-            if element < nums[0] && is_in_left {
+        }
+
+        if element == nums[start as usize] && element == nums[end as usize] {
+            start += 1;
+            end -= 1;
+            continue;
+        }
+
+        if nums[start as usize] <= element {
+            if nums[start as usize] <= target && target <= element {
                 end = mid - 1;
             } else {
                 start = mid + 1;
             }
         } else {
-            if element >= nums[0] && is_in_left {
+            if element <= target && target <= nums[end as usize] {
                 start = mid + 1;
             } else {
                 end = mid - 1;
@@ -49,7 +54,11 @@ fn search(nums: Vec<i32>, target: i32) -> bool {
 fn t_81() {
     let nums = vec![2, 5, 6, 0, 0, 1, 2];
     let nums = vec![1, 0, 1, 1, 1];
-    let target = 0;
+    let nums = vec![
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 13, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+    ];
+    let nums = vec![1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1];
+    let target = 2;
 
     println!("nums: {nums:?} | target: {target}");
     let ans = search(nums, target);
