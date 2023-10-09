@@ -8,5 +8,6 @@ mod _35_search_insert;
 mod _4_find_median_sorted_arrays;
 mod _69_sqrt;
 mod _74_search_matrix;
+mod _796_rotate_string;
 mod _81_search;
 mod _852_peak_index_in_mountain_array;

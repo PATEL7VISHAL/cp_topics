@@ -1,8 +1,8 @@
 /// # 54. Spiral Matrix [https://leetcode.com/problems/spiral-matrix/]
 /// Given an m x n matrix, return all elements of the matrix in spiral order.
 /// # Example
-/// Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
-/// Output: [1,2,3,6,9,8,7,4,5]
+/// Input: matrix = \[\[1,2,3],\[4,5,6],\[7,8,9]]
+/// Output: \[1,2,3,6,9,8,7,4,5]
 fn spiral_order(matrix: Vec<Vec<i32>>) -> Vec<i32> {
     let mut elements = matrix.len() * matrix[0].len();
     let mut ans = Vec::with_capacity(elements);
